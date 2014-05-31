@@ -54,9 +54,15 @@ app.controller('DemoCtrl', function($scope, $http) {
     $scope.person.selected = undefined;
     $scope.address.selected = undefined;
     $scope.country.selected = undefined;
+    $scope.friends = [];
+    $scope.colors = [];
   };
 
-  $scope.person = {};
+  $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
+  $scope.colors = ['Blue','Red'];
+  $scope.friends = [{ name: 'Samantha',  email: 'samantha@email.com',  age: 31 }];
+
+  $scope.person = {selected:{ name: 'Nicole',    email: 'nicole@email.com',    age: 43 }};
   $scope.people = [
     { name: 'Adam',      email: 'adam@email.com',      age: 10 },
     { name: 'Amalie',    email: 'amalie@email.com',    age: 12 },
@@ -79,7 +85,7 @@ app.controller('DemoCtrl', function($scope, $http) {
     });
   };
 
-  $scope.country = {};
+  $scope.country = {name: 'Afghanistan', code: 'AF'};
   $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
     {name: 'Afghanistan', code: 'AF'},
     {name: 'Åland Islands', code: 'AX'},
