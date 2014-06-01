@@ -367,7 +367,6 @@ angular.module('ui.select', [])
     $timeout(function() {
       ctrl.activeMatchIndex = -1;
       ctrl.activeIndex = 0;
-      // ctrl.close();
     });
   });
 
@@ -450,7 +449,8 @@ angular.module('ui.select', [])
         if (ngModel.$viewValue !== newValue) {
           ngModel.$setViewValue(newValue);
         }
-      });
+        if($select.multiple) $select.sizeSearchInput()
+      },$select.multiple);
 
       ngModel.$render = function() {
         if($select.multiple){
@@ -464,7 +464,6 @@ angular.module('ui.select', [])
             }
           }
         }
-
         $select.selected = ngModel.$viewValue;
       };
 
